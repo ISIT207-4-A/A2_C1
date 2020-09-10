@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+    var slideDir = "right";
+
+    function slideRight() {
+        slideDir = "right";
+
+        $("div").animate({left: "450px"}, 2000, function() {
+            slideLeft();
+        });
+    }
+
+    function slideLeft() {
+        slideDir = "left";
+
+        $("div").animate({left: "0px"}, 2000, function() {
+            slideRight();
+        });
+    }
+
+    $(document).ready(function(){
+        $("#start").click(function(){
+            if (slideDir == "right")
+                slideRight();
+            else slideLeft();
+        });
+
+        $("#stop").click(function(){
+            $("div").stop();
+        }); 
+    });
+</script> 
+</head>
+<body>
+
+<button id="start">Start Animation</button>
+<button id="stop">Stop Animation</button>
+
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+</body>
+</html>

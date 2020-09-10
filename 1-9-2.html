@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+    var slideDir1 = "down";
+    var slideDir2 = "down";
+
+    function slideDown1() {
+        slideDir1 = "down";
+
+        $("#box1").animate({top: "450px"}, 2000, function() {
+            slideUp1();
+        });
+    }
+
+    function slideUp1() {
+        slideDir1 = "up";
+
+        $("#box1").animate({top: "0px"}, 2000, function() {
+            slideDown1();
+        });
+    }
+
+    function slideDown2() {
+        slideDir2 = "down";
+
+        $("#box2").animate({top: "450px"}, 1000, function() {
+            slideUp2();
+        });
+    }
+
+    function slideUp2() {
+        slideDir2 = "up";
+
+        $("#box2").animate({top: "0px"}, 1000, function() {
+            slideDown2();
+        });
+    }
+
+    $(document).ready(function(){
+        $("#start").click(function(){
+            if (slideDir1 == "down")
+                slideDown1();
+            else slideUp1();
+            if (slideDir2 == "down")
+                slideDown2();
+            else slideUp2();
+        });
+
+        $("#stop").click(function(){
+            $("#box1").stop();
+            $("#box2").stop();
+        }); 
+    });
+</script> 
+</head>
+<body>
+
+<button id="start">Start Animation</button>
+<button id="stop">Stop Animation</button>
+
+<div id="box1" style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+<div id="box2" style="background:#98bf21;height:100px;width:200px;position:absolute; left:400px;">HELLO</div>
+
+</body>
+</html>

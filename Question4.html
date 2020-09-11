@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#myDIV {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+
+#DIV2 {
+  position: relative;
+  top: 130px;
+  left: 30px;
+  width: 300px;
+  height: 150px;
+  background-color: coral;
+  border: 1px solid black;
+}
+#DIV3 {
+  position: relative;
+  top: 130px;
+  left: 30px;
+  width: 300px;
+  height: 150px;
+  background-color: red;
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1>Change z-index with JavaScript</h1>
+
+
+
+
+<div id="DIV2" onClick="myFunction('DIV2')">
+</div>
+
+<div id="myDIV" onClick="myFunction('myDIV')">
+</div>
+<div id="DIV3"onClick="myFunction('DIV3')">
+</div>
+<script>
+ var indexChange;
+function myFunction(id) {
+    if(indexChange!=null){
+	document.getElementById(indexChange).style.zIndex=0;
+ }
+ 
+   document.getElementById(id).style.zIndex = 1;
+   indexChange = id;
+
+}
+</script>
+
+</body>
+</html>

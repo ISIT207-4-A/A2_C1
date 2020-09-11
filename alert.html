@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+// anywhere.js
+//   Display a message when the mouse button is pressed,
+//   no matter where it is on the screen 
+
+// The event handler function to display the message
+
+function displayIt(evt) {
+  var dom = document.getElementById("message");
+  dom.style.left = (evt.clientX - 100) + "px";
+  dom.style.top = (evt.clientY - 25) + "px";
+  dom.style.visibility = "visible";
+}
+
+// ****************************************************
+// The event handler function to hide the message
+
+function hideIt() {
+  document.getElementById("message").style.visibility =
+      "hidden";
+}
+
+</script>
+<body onmousedown = "displayIt(event);" onmouseup ="hideIt();">
+        <p>
+        <span id= "message"  
+            style = "color: red; visibility: hidden;
+                    position: absolute;
+                    font-weight: bold;">
+        Don't click here! 
+        </span>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        </p>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+    #die{
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #button{
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 45px;
+        max-width: 160px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <img src="images/dice1.png" alt="" id="die"><br>
+    <button id="button">Roll</button>
+</body>
+
+<script>
+    function Die(color){
+        this.color = color;
+    }
+
+    Die.prototype.randomRoll = function(){
+        var roll = Math.floor(Math.random() * 6) + 1;
+        console.log("ok");
+        $("#die").attr("src", "images/dice" + roll +".png");
+    };
+
+    var die = new Die("red");
+    var button = document.getElementById("button");
+    button.addEventListener("click", function(){
+        die.randomRoll()
+    });
+
+</script>
+</html>

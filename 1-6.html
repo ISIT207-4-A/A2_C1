@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>A jQuery Behaviour</title>  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+   <script>
+       $(document).ready(function(){  
+           $("table tr:nth-child(even)").addClass('redToGreen');
+           $("table tr:nth-child(odd)").addClass('yellowToBlue');
+           $("#button1").click(function(){                              
+               $("table tr:nth-child(even)").toggleClass('redToGreen greenToRed');
+           });              
+           $("#button2").click(function(){          
+               $("table tr:nth-child(odd)").toggleClass('yellowToBlue blueToYellow');              
+           });
+       });
+   </script>
+   <style>
+       table,th,td{
+           border : 1px solid black;
+           border-collapse : collapse;
+       }
+       .redToGreen{
+           background-color: green;
+           color : white;
+       }
+       .yellowToBlue{          
+           color : blue;
+           font-size : 20px;          
+       }
+       .greenToRed{
+           background-color: red;
+           color : white;
+       }
+       .blueToYellow{
+           background-color : yellow;
+           font-size : 20px;  
+           font-style : italic;
+       }
+   </style>      
+</head>
+<body>
+<center>  
+   <h2>Style Changer using jQuery</h2>
+   <table>
+       <tr><th>Name</th><th>ID number</th><th>Major</th></tr>
+       <tr><td>Viet</td><td>1111</td><td>Computer Science </td></tr>
+       <tr><td>Nguyen</td><td>2222</td><td>Computer Science</td></tr>
+       <tr><td>Son</td><td>3333</td><td>Computer Science</td></tr>
+       <tr><td>Hoang</td><td>4444</td><td>Computer Science</td></tr>
+       <tr><td>Ziqi</td><td>5555</td><td>Computer Science</td></tr>
+       <tr><td>Mingyang</td><td>6666</td><td>Computer Science</td></tr>      
+   </table>
+   <br/>
+   <button id="button1">Change Even Rows Style</button>
+   <button id="button2">Change Odd Rows Style</button>
+</center>
+</body>
+</html>

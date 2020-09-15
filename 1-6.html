@@ -5,13 +5,13 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
    <script>
        $(document).ready(function(){  
-           $("table tr:nth-child(even)").addClass('redToGreen');
-           $("table tr:nth-child(odd)").addClass('yellowToBlue');
+           $(' tr:nth-child(even) td').addClass('redToGreen');
+           $('tr:nth-child(odd) td').addClass('yellowToBlue');
            $("#button1").click(function(){                              
-               $("table tr:nth-child(even)").toggleClass('redToGreen greenToRed');
+               $(' tr:nth-child(even) td').toggleClass('redToGreen greenToRed');
            });              
            $("#button2").click(function(){          
-               $("table tr:nth-child(odd)").toggleClass('yellowToBlue blueToYellow');              
+               $(' tr:nth-child(odd) td' ).toggleClass('yellowToBlue blueToYellow');              
            });
        });
    </script>
@@ -43,8 +43,16 @@
 <center>  
    <h2>Style Changer using jQuery</h2>
    <table>
-       <tr><th>Name</th><th>ID number</th><th>Major</th></tr>
-       <tr><td>Viet</td><td>1111</td><td>Computer Science </td></tr>
+       <tr>
+          <th>Name</th>
+          <th>ID number</th>
+          <th>Major</th>
+        </tr>   
+       <tr>
+          <td>Viet</td>
+          <td>1111</td>
+          <td>Computer Science </td>
+        </tr>
        <tr><td>Nguyen</td><td>2222</td><td>Computer Science</td></tr>
        <tr><td>Son</td><td>3333</td><td>Computer Science</td></tr>
        <tr><td>Hoang</td><td>4444</td><td>Computer Science</td></tr>

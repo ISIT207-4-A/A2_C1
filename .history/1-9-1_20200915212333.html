@@ -8,7 +8,7 @@
     function slideRight() {
         slideDir = "right";
 
-        $("img").animate({left: "450px"}, 2000, function() {
+        $("div").animate({left: "450px"}, 2000, function() {
             slideLeft();
         });
     }
@@ -16,7 +16,7 @@
     function slideLeft() {
         slideDir = "left";
 
-        $("img").animate({left: "0px"}, 2000, function() {
+        $("div").animate({left: "0px"}, 2000, function() {
             slideRight();
         });
     }
@@ -29,7 +29,7 @@
         });
 
         $("#stop").click(function(){
-            $("img").stop();
+            $("div").stop();
         }); 
     });
 </script> 
@@ -39,7 +39,7 @@
 <button id="start">Start Animation</button>
 <button id="stop">Stop Animation</button>
 
-<img src="images/car.png" style="height: 200px; width: 200px; top: 30px; left: 0px; position:absolute;" />
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
 
 </body>
 </html>
